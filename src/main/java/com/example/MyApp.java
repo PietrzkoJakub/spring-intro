@@ -9,7 +9,12 @@ public class MyApp {
 
         MessageService messageService = applicationContext.getBean("messageService", MessageService.class);
 
-        System.out.println(messageService.getMessage());
+        MessageService messageService2 = applicationContext.getBean("randomMessageService", MessageService.class);
+
+        //System.out.println(messageService.getMessage());
+
+        System.out.println("Zmienna nr 1 = "+messageService.hashCode());
+        System.out.println("Zmienna nr 2 = "+messageService2.hashCode());
 
         applicationContext.close();
     }
